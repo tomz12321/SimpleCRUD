@@ -14,7 +14,7 @@ public class UserRegistrationSystem
     private UserDatabase newUserList;
 
     /**
-     * Default Constructor for objects of class Movie System
+     * Default Constructor for objects of class User System
      */
     public UserRegistrationSystem()
     {
@@ -107,8 +107,8 @@ public class UserRegistrationSystem
     }
     
     /**
-     * A method to delete movie from the database system
-     * if there are above two movies appearing on the search result
+     * A method to delete user from the database system
+     * if there are above two users appearing on the search result
      * provide choosing options
      * 
      * @param
@@ -131,7 +131,7 @@ public class UserRegistrationSystem
 
         ArrayList<User> delResultList = newUserList.searchUser(delKeyword);
 
-        //display Movie details
+        //display User details
         System.out.println("Search Result");
         for (int j = 0 ; j < delResultList.size() ; j++)
         {
@@ -175,12 +175,12 @@ public class UserRegistrationSystem
             else
                 delUserName = "";
 
-            //System.out.println("Delete Movie , please insert delete title:");
-            //String delMovieName = input.nextLine();
+            //System.out.println("Delete User , please insert delete title:");
+            //String delUserName = input.nextLine();
             newUserList.deleteUser(delUserName);
         }
         else
-            System.out.println("No matched movies");
+            System.out.println("No matched users");
     }
 
     /**
@@ -204,8 +204,8 @@ public class UserRegistrationSystem
     }
 
     /**
-     * A method to edit movie from the database system
-     * if there are above two movies appearing on the search result
+     * A method to edit user from the database system
+     * if there are above two users appearing on the search result
      * provide choosing options
      * 
      * @param
@@ -228,7 +228,7 @@ public class UserRegistrationSystem
 
         ArrayList<User> editResultList = newUserList.searchUser(editKeyword);
 
-        //display Movie details
+        //display User details
         System.out.println("Search Result");
         for (int j = 0 ; j < editResultList.size() ; j++)
         {
@@ -299,7 +299,7 @@ public class UserRegistrationSystem
             }
         }
         else
-            System.out.println("No matched movies");
+            System.out.println("No matched users");
     }
 
     /**
@@ -331,7 +331,7 @@ public class UserRegistrationSystem
     private void readFile()
     {
         String filename = ("myUser.txt");
-        String videos;
+        String staff;
         User loadFromFile;
         // try catch to handle FileNotFoundException and IOException
         try
@@ -342,17 +342,17 @@ public class UserRegistrationSystem
             while (parser.hasNextLine())
             {
                 loadFromFile = new User(); 
-                videos = parser.nextLine();
-                String[] attribute = videos.split(",");
+                staff = parser.nextLine();
+                String[] attribute = staff.split(",");
 
                 for (int i = 0 ; i < attribute.length ; i++)
                 {
                    System.out.println (attribute[i]);
                 
-                   //numbers of Movies
+                   //numbers of Users
                    //for (int k = 0 ; k < loadFromFile.getNumbersOfElements() ; k++)
                    //{
-                   //attributes of Movies
+                   //attributes of Users
                    //}
                 }
 
@@ -397,10 +397,10 @@ public class UserRegistrationSystem
         while(validBlank(newUserName,"User Name"))
             newUserName = input.nextLine().toLowerCase();
 
-        //searchMovie()
+        //searchUser()
         ArrayList<User> resultList = newUserList.searchUser(newUserName);
 
-        //display Movie details
+        //display User details
         System.out.println("Search Result");
         for (int j = 0 ; j < resultList.size() ; j++)
         {
@@ -527,14 +527,14 @@ public class UserRegistrationSystem
     }
 
     /**
-     * Method to check Movie Name repeatation
+     * Method to check User Name repeatation
      * 
-     * @param MovieName the Name
-     * @return the boolean of Movie Name repeatation
+     * @param UserName the Name
+     * @return the boolean of User Name repeatation
      */
-    private boolean validUserName(String userName) //method to check Movie Name repeatation
+    private boolean validUserName(String userName) //method to check User Name repeatation
     {
-        //check if movie title is not in database , and return false to break while loop
+        //check if user title is not in database , and return false to break while loop
         boolean isRepeated = newUserList.validUserName(userName);
         if (isRepeated)
         {
@@ -590,37 +590,37 @@ public class UserRegistrationSystem
     private void writeFile()
     {
         String filename = ("myUser.txt");
-        //use movie.getNumbersOfElement() to replace 6
-        String[] videos = new String[6];
+        //use User.getNumbersOfElement() to replace 6
+        String[] staff = new String[6];
         Scanner input = new Scanner(System.in);
         String line = "";
-        int numberOfVideos;
+        int numberOfStaffs;
         UserDatabase toWriteUserList = new UserDatabase();
         
         //print the result of inserting
         System.out.println("How many users your want to insert :");
-        //numberOfVideos = convertStringtoInt(input.nextLine());
-        numberOfVideos = newUserList.getNumbersOfUsers();
-        System.out.println(numberOfVideos + "");
+        //numberOfStaffs = convertStringtoInt(input.nextLine());
+        numberOfStaffs = newUserList.getNumbersOfUsers();
+        System.out.println(numberOfStaffs + "");
         //try catch to handle IOException
         try
         {
             PrintWriter outputFile = new PrintWriter (filename);
 
-            for (int i = 0 ; i < numberOfVideos ; i++ )
+            for (int i = 0 ; i < numberOfStaffs ; i++ )
             {
-                videos[0] = newUserList.getUserList().get(i).getUsername();
-                videos[1] = newUserList.getUserList().get(i).getPassword();
-                videos[2] = newUserList.getUserList().get(i).getUsertype();
+                staff[0] = newUserList.getUserList().get(i).getUsername();
+                staff[1] = newUserList.getUserList().get(i).getPassword();
+                staff[2] = newUserList.getUserList().get(i).getUsertype();
                
                 //combine elements into a line
                 for (int k = 0 ; k < 3 ; k++ )
                 {   
-                    //line = videos[0] + "," + videos[1] + "," + videos[2] + "," + videos[3] + "," + videos[4] + "," + videos[5];
+                    //line = staff[0] + "," + staff[1] + "," + staff[2] + "," + staff[3] + "," + staff[4] + "," + staff[5];
                     if (k != 3 - 1)
-                        line = line + videos[k] + ",";
+                        line = line + staff[k] + ",";
                     else
-                        line = line + videos[k];
+                        line = line + staff[k];
                 }
                 //display a message about write line
                 System.out.println("");

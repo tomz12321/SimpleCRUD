@@ -32,7 +32,7 @@ public class User
      */
     public void displayUserRecord()
     {
-        //method to test displaying attributes of the movie
+        //method to test displaying attributes of the user
         System.out.print(username + ",");
         System.out.print(password + ",");
         System.out.print(usertype + "\n");

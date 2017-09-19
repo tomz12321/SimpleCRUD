@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Write a description of class MovieDatabase here.
+ * Write a description of class UserDatabase here.
  * 
  * @author Jyhwoei Yang 
  * @version 18/09/2017
@@ -34,7 +34,7 @@ public class UserDatabase
     /**
      * A method to delete User from the list
      * 
-     * @param delMovieName the name of delete movie
+     * @param delUserName the name of delete user
      * @return 
      */
     public void deleteUser(String delUserName)
@@ -52,14 +52,14 @@ public class UserDatabase
         }        
         if (! isDeleted)
         {
-            System.out.println(" No matched movies are deleted."); 
+            System.out.println(" No matched users are deleted."); 
         }
     } 
     
     /**
      * A method to edit User from the list
      * 
-     * @param editUserName,editPassword,editUserType the name of edit movie
+     * @param editUserName,editPassword,editUserType the name of edit user
      * @return 
      */
     public void editUser(String editUserName, String editPassword, String editUserType)
@@ -95,10 +95,10 @@ public class UserDatabase
     }
     
     /**
-     * A method to return the whole movie list
+     * A method to return the whole user list
      * 
      * @param 
-     * @return the whole movieList
+     * @return the whole userList
      */
     public ArrayList<User> getUserList()
     {
@@ -117,7 +117,7 @@ public class UserDatabase
     }   
     
     /**
-     * List all the movies currently in the database on standard out.
+     * List all the users currently in the database on standard out.
      */
     public void listAll() 
     {
@@ -152,7 +152,7 @@ public class UserDatabase
      * @param userName the userName, index the index
      * @return 
      */
-    public void setMovie(User insertedUser, int index)
+    public void setUser(User insertedUser, int index)
     {
         userList.set(index, insertedUser);
     }
