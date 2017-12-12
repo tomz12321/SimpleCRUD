@@ -28,7 +28,7 @@ public class UserRegistrationSystem
      * @param
      * @return 
      */
-    private void addUser()
+    public void addUser()
     {
         //input
         Scanner input = new Scanner(System.in);

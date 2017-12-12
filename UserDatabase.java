@@ -174,5 +174,46 @@ public class UserDatabase
         
         return false;        
     }
+    
+    /**
+    * Method to check User Password
+    * 
+    * @param UserName the Name
+    * @return the boolean of Username/password match result
+    */
+    public boolean validUserPassword(String username, String password) //method to check login information
+    {
+        //check if user name is not in database , and return false to break while loop
+        for (int i = 0 ; i < getNumbersOfUsers() ; i++ )
+        {
+            if (username.equals(getUserList().get(i).getUsername()))
+            {
+                if (getUserList().get(i).getPassword().equals(password))
+                    return true;
+            }
+        }
+        
+        return false;        
+    }
+    
+    /**
+    * Method to check User Password
+    * 
+    * @param UserName the Name
+    * @return the boolean of Username/password match result
+    */
+    public String getUsertype(String username, String password) //method to check login information
+    {
+        //check if user name is not in database , and return false to break while loop
+        for (int i = 0 ; i < getNumbersOfUsers() ; i++ )
+        {
+            if (username.equals(getUserList().get(i).getUsername()))
+            {
+                if (getUserList().get(i).getPassword().equals(password))
+                    return getUserList().get(i).getUsertype();
+            }
+        }
+        return "";        
+    }
 }   
     
