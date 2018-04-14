@@ -17,6 +17,6 @@ New a UserRegistrationSystem object from the class UserRegistrationSystem, then 
 Step 1) System will load in database from the file myUser.txt
 Step 2) Press 1 to search user from the list
 Step 3) Press 2 or 3 to add/delete user into the list.
-Step 3) Press 4 to edit the users from the user list you choose. (HD version)
-Step 6) Press 5 to exit the system
+Step 4) Press 4 to edit the users from the user list you choose. (HD version)
+Step 5) Press 5 to exit the system
 
